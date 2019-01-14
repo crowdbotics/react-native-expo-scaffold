@@ -1,0 +1,38 @@
+{% raw %}
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="jumbotron mt-5 editable" data-remote="{{ homepage.api }}" data-field="{{ homepage.field }}">
+      {{ homepage.body|safe }}
+    </div>
+    <div class="row mt-0 mb-5">
+        {% for package in packages %}
+            <div class="col-md-4 mt-5">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a class="card-title" href="{{package.url}}">{{package.name}}</a>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="top-140-pad">
+        <div class="sticky pull-right">
+            <div>
+              <a href="https://www.crowdbotics.com/?ref=badge+{{customtext.title}}">
+                  <span class="badge badge-success pull-right">
+                      <div id="image" style="display:inline;">
+                        <img class="img-fluid pencil" src="{% static 'img/slack-app-pencil.png' %}" alt="Built with software packages from crowdbotics.com" height="30" width="30">
+                          </div>
+                      <div id="texts" style="display:inline; margin-left: 4px;">
+                        Made with Crowdbotics.com
+                      </div>
+                  </span>
+              </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% endraw %}

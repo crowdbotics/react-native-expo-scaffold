@@ -1,0 +1,26 @@
+
+body {
+    background: linear-gradient(to bottom left, #33ccff 0%, #ff99cc 100%);
+    height: 100%;
+    min-height: 100vh;
+}
+.top-right {
+    position: absolute;
+    top: 20px;
+    right:50px;
+}
+.badge-success {
+  color: #000000c4;
+  background-color: #e9ecef;
+  padding: 8px 8px 8px 8px;
+}
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+}
+.top-140-pad{
+    padding-top: 140px;
+}
+.pull-right {
+    float: right;
+}
