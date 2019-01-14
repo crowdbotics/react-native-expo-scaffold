@@ -20,16 +20,16 @@ This is a React Native Expo scaffold for frontend and Django scaffold as backend
 
 * Initial Home Screen
 
-  ![Home](https://github.com/crowdbotics/react-native-expo-scaffold/tree/master/screenshots/home.png)
+  ![Home](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/home.png)
 
 * Initial Authentication Screens:
   * Login
 
-    ![Login](https://github.com/crowdbotics/react-native-expo-scaffold/tree/master/screenshots/login.png)
+    ![Login](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/login.png)
 
   * Signup
 
-    ![Signup](https://github.com/crowdbotics/react-native-expo-scaffold/tree/master/screenshots/signup.png)
+    ![Signup](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/signup.png)
 
 ## Django Included Features
 
