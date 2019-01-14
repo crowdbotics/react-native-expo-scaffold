@@ -1,0 +1,18 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+      "no-debugger": "warn",
+      "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+      "global-require": "off",
+      "react/jsx-filename-extension": ["warn", { "extensions": [".js"] }],
+      "react/prop-types": ["error", { "ignore": ["navigation"] }]
+    },
+    "globals": {
+      "__DEV__": true,
+      "window": true,
+      "it": true,
+      "expect": true,
+      "fetch": true
+    }
+  }

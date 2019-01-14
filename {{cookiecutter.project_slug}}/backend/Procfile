@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT {{cookiecutter.project_slug}}.wsgi:application

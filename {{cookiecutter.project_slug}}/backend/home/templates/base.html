@@ -1,0 +1,108 @@
+{% raw %}
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/themes/tim.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href={% static 'css/main.css' %} >
+    <title>{{ customtext.title|striptags }}</title>
+  </head>
+  <body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand editable" data-remote="{{ customtext.api }}" data-field="{{ customtext.field }}" href="/">
+              {{ customtext.title|safe }}
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    {% if not user.is_authenticated %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {% if user.is_superuser %}
+            <span class="btn btn-success top-right" id="editor" title="Change to inline editor">Edit</span>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        $('#editor').on('click', function (e) {
+            if (e.target.innerText === 'Edit'){
+                e.target.innerText = 'Cancel';
+                var editor = new MediumEditor('.editable');
+                editor.subscribe('editableBlur', function (event, editable) {
+                    var url = editable.dataset.remote;
+                    var field = editable.dataset.field;
+                    var data = {};
+                    data[field] = editable.innerHTML;
+                    api_call(url, data);
+                });
+            } else {
+                e.target.innerText = 'Edit';
+                window._mediumEditors.forEach(function (editor) {
+                    if (editor)
+                        editor.destroy();
+                })
+            }
+        });
+
+        function api_call(url, data, method='PATCH'){
+            $.ajax({
+                type: method,
+                url: url,
+                data: data,
+                dataType: 'json',
+                headers: {
+                    'X-CSRFToken': $.cookie('csrftoken')
+                },
+                success: function (response) {
+                    toastr.success('Update Successful')
+                },
+                error: function (response) {
+                    toastr.error('Update Unsuccessful')
+                }
+            });
+        }
+        toastr.options = {
+          "positionClass": "toast-bottom-right",
+          "fadeIn": 300,
+          "fadeOut": 800,
+          "timeOut": 2000,
+          "extendedTimeOut": 1000
+        };
+    </script>
+    </body>
+</html>
+{% endraw %}

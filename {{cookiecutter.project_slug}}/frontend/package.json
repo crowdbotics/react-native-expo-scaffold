@@ -1,0 +1,31 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "ios:beta": "fastlane ios beta",
+    "android:beta": "fastlane android beta"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^9.0.0",
+    "expo": "^32.0.0",
+    "expokit": "^32.0.3",
+    "lodash": "^4.17.11",
+    "native-base": "^2.10.0",
+    "prop-types": "^15.6.2",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-navigation": "^3.0.9",
+    "react-navigation-redux-helpers": "^2.0.9",
+    "react-redux": "^6.0.0",
+    "react-style-proptype": "^3.2.2",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0"
+  },
+  "private": true
+}
