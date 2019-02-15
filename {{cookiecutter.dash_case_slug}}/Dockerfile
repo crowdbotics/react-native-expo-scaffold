@@ -9,27 +9,27 @@ RUN apk add --no-cache --update \
   python3 \
   python3-dev \
   py3-pip \
+  git \
   nodejs \
   nodejs-npm
 RUN pip3 install --no-cache-dir -q pipenv
 
 # Add our code
-ADD ./ /opt/webapp/
+ADD ./ /app/webapp/
 
-WORKDIR /opt/webapp/backend
+WORKDIR /app/webapp/frontend
+
+# Install frontend dependencies
+RUN npm ci
+
+WORKDIR /app/webapp/backend
 
 # Install backend dependencies
 RUN pipenv install --deploy --system
-RUN python3 manage.py collectstatic --no-input
 
 # Run the image as a non-root user
 RUN adduser -D myuser
 USER myuser
 
 # Run the web server on port $PORT
-CMD waitress-serve --port=$PORT {{cookiecutter.project_slug}}.wsgi:application
-
-WORKDIR /opt/webapp/frontend
-
-# Install frontend dependencies
-RUN npm ci
+CMD waitress-serve --port=$PORT {{cookiecutter.snake_case_slug}}.wsgi:application

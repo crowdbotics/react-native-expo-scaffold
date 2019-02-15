@@ -1,7 +1,7 @@
 {
-  "name": "{{cookiecutter.project_slug}}",
+  "name": "{{cookiecutter.dash_case_slug}}",
   "description": "A blueprint for Django web apps. This django application was built with Crowdbotics www.crowdbotics.com",
-  "repository": "https://github.com/crowdbotics-users/{{cookiecutter.project_slug}}",
+  "repository": "https://github.com/crowdbotics-users/{{cookiecutter.dash_case_slug}}",
   "keywords": [
     "web",
     "django"
@@ -14,6 +14,6 @@
     "sendgrid:starter"
   ],
   "scripts": {
-    "postdeploy": "./postdeploy.sh"
+    "postdeploy": "./backend/postdeploy.sh"
   }
 }
