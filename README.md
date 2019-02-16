@@ -1,6 +1,8 @@
 # React Native Expo Scaffold
 
-This is a React Native Expo scaffold for frontend and Django scaffold as backend built with cookiecutter.
+This is a scaffold, using the Crowdbotics framework, for creating self-contained mobile apps. 
+
+It uses React Native, with Expo, for the frontend and Django scaffold as a backend.
 
 ## React Native Included Features
 
@@ -47,6 +49,6 @@ This is a React Native Expo scaffold for frontend and Django scaffold as backend
 
 ## Crowdbotics
 
-You can use this scaffold and build your own app using the [Crowdbotics Application Builder](https://app.crowdbotics.com/).
+You can use this scaffold to build your own app using the [Crowdbotics Application Builder](https://app.crowdbotics.com/), or with the `cookiecutter` command-line tool.
 
 Built by [Crowdbotics](https://www.crowdbotics.com/).
