@@ -15,7 +15,6 @@ This is a repository for a web application developed with Django, built with [Cr
 
 ### Installation
 1. Install [pipenv](https://pypi.org/project/pipenv/)
-2. Clone this repo and `cd {{cookiecutter.dash_case_slug}}`
 3. Run `pip install --user --upgrade pipenv` to get the latest pipenv version.
 4. Run `pipenv --python 3.6`
 5. Run `pipenv install`
