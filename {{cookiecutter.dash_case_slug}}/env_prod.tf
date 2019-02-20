@@ -1,4 +1,3 @@
-
 resource "heroku_app" "production" {
   name   = "${var.app_name}-prod"
   region = "us"

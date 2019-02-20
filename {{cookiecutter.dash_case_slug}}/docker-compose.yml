@@ -1,15 +1,14 @@
-
 version: '3'
 services:
   web:
     build: .
     ports:
       - "8000:8000"
-    env_file: .env
+    env_file: ./backend/.env
     depends_on:
       - db
     volumes:
-      - ./:/opt/webapp
+      - ./:/app/webapp
   db:
     image: postgres:latest
     ports:

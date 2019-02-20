@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "reactnativescaffold",
-    "slug": "reactnativescaffold",
+    "name": "{{cookiecutter.project_name}}",
+    "slug": "{{cookiecutter.dash_case_slug}}",
     "privacy": "unlisted",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -13,7 +13,7 @@
     "icon": "./src/assets/images/icon.png",
     "splash": {
       "image": "./src/assets/images/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {

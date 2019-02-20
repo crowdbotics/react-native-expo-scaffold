@@ -1,0 +1,2 @@
+web: waitress-serve --port=$PORT backend.{{cookiecutter.snake_case_slug}}.wsgi:application
+release: ./backend/release-tasks.sh
