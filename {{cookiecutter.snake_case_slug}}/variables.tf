@@ -7,7 +7,7 @@ variable "app_name" {
 variable "custom_domain" {
   description = "Custom domain name (optional)"
   type = "string"
-  default = ""
+  default = "{{cookiecutter.custom_domain}}"
 }
 
 variable "dyno_size" {
@@ -19,7 +19,7 @@ variable "dyno_size" {
 variable "repo_url" {
     description = "URL to the git repo"
     type = "string"
-    default = "https://github.com/crowdbotics-users/{{cookiecutter.dash_case_slug}}"
+    default = "{{cookiecutter.github_url}}"
 }
 
 variable "heroku_team" {
