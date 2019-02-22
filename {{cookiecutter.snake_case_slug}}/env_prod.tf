@@ -2,6 +2,11 @@ resource "heroku_app" "production" {
   name   = "${var.app_name}-prod"
   region = "us"
   stack  = "container"
+  organization = {
+    name = "${var.heroku_team}"
+    locked = "false"
+    personal = "false"
+  }
 }
 
 resource "heroku_addon" "database_production" {
@@ -27,6 +32,7 @@ resource "cloudflare_record" "cb_domain_record" {
   // ttl of 1 is automatic
   ttl    = 1
 }
+
 resource "heroku_pipeline" "pipeline" {
   name = "${var.app_name}"
 }
@@ -35,6 +41,23 @@ resource "heroku_pipeline_coupling" "production" {
   app      = "${heroku_app.production.name}"
   pipeline = "${heroku_pipeline.pipeline.id}"
   stage    = "production"
+}
+
+resource "heroku_build" "production" {
+  app = "${heroku_app.production.id}"
+
+  source = {
+    url = "${var.repo_url}/archive/master.tar.gz"
+  }
+}
+
+resource "heroku_formation" "formation_prod" {
+  app = "${heroku_app.production.id}"
+  type = "web"
+  quantity = 1
+  size = "${var.dyno_size}"
+
+  depends_on = ["heroku_build.production"]
 }
 
 output "app_id" {
