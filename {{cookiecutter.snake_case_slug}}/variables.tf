@@ -13,7 +13,7 @@ variable "custom_domain" {
 variable "dyno_size" {
   description = "Size of Heroku dynos"
   type = "string"
-  default = "standard-1x"
+  default = "standard-1X"
 }
 
 variable "repo_url" {
