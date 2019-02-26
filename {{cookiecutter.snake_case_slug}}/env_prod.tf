@@ -55,6 +55,7 @@ resource "heroku_formation" "formation_prod" {
   app = "${heroku_app.production.id}"
   type = "web"
   quantity = 1
+  size = "${var.dyno_size}"
 
   depends_on = ["heroku_build.production"]
 }
