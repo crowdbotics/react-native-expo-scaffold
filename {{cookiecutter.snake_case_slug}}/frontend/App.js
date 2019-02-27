@@ -1,6 +1,6 @@
 {% raw %}
 import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
+import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 
 import { AppNavigator } from './src/navigators/AppNavigator';
@@ -11,9 +11,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <SafeAreaView style={{ flex: 1 }}>
-          <AppNavigator />
-        </SafeAreaView>
+        <StatusBar barStyle="light-content" />
+        <AppNavigator />
       </Provider>
     );
   }
