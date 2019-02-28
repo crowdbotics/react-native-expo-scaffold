@@ -34,6 +34,11 @@ class Login extends Component {
     this.props.navigation.navigate('Signup');
   }
 
+  // navigate to forgot password screen
+  onForgotPasswordButtonPressed = () => {
+    this.props.navigation.navigate('ForgotPassword');
+  }
+
   render() {
     return (
       <Container style={styles.container}>
@@ -90,6 +95,12 @@ class Login extends Component {
             >
               <Text style={styles.loginText}>LOGIN</Text>
             </Button>
+
+            <View style={styles.forgotPasswordContainer}>
+              <TouchableOpacity onPress={this.onForgotPasswordButtonPressed}>
+                <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+              </TouchableOpacity>
+            </View>
 
             {/* Signup Button */}
             <View style={styles.signupContainer}>
