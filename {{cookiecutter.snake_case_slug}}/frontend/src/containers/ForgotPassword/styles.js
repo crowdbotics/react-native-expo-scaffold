@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: PixelRatio.getPixelSizeForLayoutSize(40),
-    marginBottom: PixelRatio.getPixelSizeForLayoutSize(40),
+    marginTop: PixelRatio.getPixelSizeForLayoutSize(30),
+    marginBottom: PixelRatio.getPixelSizeForLayoutSize(20),
   },
   logoText: {
     color: 'white',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   form: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
   item: {
     marginVertical: PixelRatio.getPixelSizeForLayoutSize(2),
@@ -42,37 +42,34 @@ const styles = StyleSheet.create({
   input: {
     color: 'white',
   },
+  resetInstructionsText: {
+    color: '#bec0ce',
+    fontSize: 12,
+    textAlign: 'center',
+  },
   buttonContainer: {
     flex: 1,
-    marginTop: PixelRatio.getPixelSizeForLayoutSize(10),
-  },
-  forgotPasswordContainer: {
-    alignItems: 'center',
-    marginTop: PixelRatio.getPixelSizeForLayoutSize(2),
-  },
-  forgotPasswordText: {
-    color: 'white',
-    fontSize: 16,
+    marginTop: PixelRatio.getPixelSizeForLayoutSize(15),
   },
   button: {
     marginVertical: PixelRatio.getPixelSizeForLayoutSize(2),
     backgroundColor: '#7646e4',
   },
-  loginText: {
+  sendText: {
     color: 'white',
     fontSize: 20,
     fontWeight: '600',
   },
-  signupContainer: {
+  loginContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: PixelRatio.getPixelSizeForLayoutSize(3),
+    marginTop: PixelRatio.getPixelSizeForLayoutSize(5),
   },
-  dontHaveAccountText: {
+  rememberAccountText: {
     color: '#bec0ce',
     fontSize: 16,
   },
-  signupText: {
+  loginText: {
     color: 'white',
     fontSize: 16,
   },

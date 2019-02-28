@@ -16,17 +16,14 @@ import {
 
 import styles from './styles';
 
-
-class Signup extends Component {
+class Login extends Component {
   state = {
-    username: '',
-    password: '',
-    confirmPassword: '',
+    email: '',
   };
 
-  // navigate to login screen after a successful signup
-  onSignupButtonPressed = () => {
-    // TODO: Login
+  // navigate to home after request of forgot password
+  onForgotPasswordButtonPressed = () => {
+    // TODO: Forgot Password
 
     this.props.navigation.navigate('Login');
   }
@@ -46,7 +43,7 @@ class Signup extends Component {
               style={styles.logo}
               source={require('../../assets/images/icon.png')}
             />
-            <Text style={styles.logoText}>Crowdbotics</Text>
+            <Text style={styles.logoText}>Forgot Password?</Text>
           </View>
 
           {/* Form */}
@@ -58,57 +55,34 @@ class Signup extends Component {
             >
               <Input
                 style={styles.input}
-                placeholder="Username"
+                placeholder="Email"
                 placeholderTextColor="#afb0d1"
                 autoCapitalize="none"
-                onChangeText={username => this.setState({ username })}
+                onChangeText={email => this.setState({ email })}
               />
             </Item>
-            <Item
-              style={styles.item}
-              rounded
-              last
-            >
-              <Input
-                style={styles.input}
-                placeholder="Password"
-                placeholderTextColor="#afb0d1"
-                onChangeText={password => this.setState({ password })}
-                secureTextEntry
-              />
-            </Item>
-            <Item
-              style={styles.item}
-              rounded
-              last
-            >
-              <Input
-                style={styles.input}
-                placeholder="Confirm Password"
-                placeholderTextColor="#afb0d1"
-                onChangeText={confirmPassword => this.setState({ confirmPassword })}
-                secureTextEntry
-              />
-            </Item>
+            <Text style={styles.resetInstructionsText}>
+              Enter your email below to receive your password reset instructions.
+            </Text>
           </Form>
 
           <View style={styles.buttonContainer}>
             {/* Login Button */}
             <Button
               style={styles.button}
-              onPress={this.onSignupButtonPressed}
+              onPress={this.onForgotPasswordButtonPressed}
               hasText
               block
               large
               dark
               rounded
             >
-              <Text style={styles.signupText}>SIGNUP</Text>
+              <Text style={styles.sendText}>SEND</Text>
             </Button>
 
             {/* Signup Button */}
             <View style={styles.loginContainer}>
-              <Text style={styles.haveAccountText}>Already have an account?</Text>
+              <Text style={styles.rememberAccountText}>Remember you account?</Text>
               <TouchableOpacity onPress={this.onLoginButtonPressed}>
                 <Text style={styles.loginText}>Login Now.</Text>
               </TouchableOpacity>
@@ -120,4 +94,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Login;

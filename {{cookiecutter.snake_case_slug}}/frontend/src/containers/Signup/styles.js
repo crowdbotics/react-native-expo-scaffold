@@ -50,21 +50,21 @@ const styles = StyleSheet.create({
     marginVertical: PixelRatio.getPixelSizeForLayoutSize(2),
     backgroundColor: '#7646e4',
   },
-  loginText: {
+  signupText: {
     color: 'white',
     fontSize: 20,
     fontWeight: '600',
   },
-  signupContainer: {
+  loginContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: PixelRatio.getPixelSizeForLayoutSize(5),
   },
-  dontHaveAccountText: {
+  haveAccountText: {
     color: '#bec0ce',
     fontSize: 16,
   },
-  signupText: {
+  loginText: {
     color: 'white',
     fontSize: 16,
   },
