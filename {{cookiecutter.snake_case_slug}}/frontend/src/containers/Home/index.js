@@ -9,9 +9,9 @@ import styles from './styles';
 
 
 const Home = () => (
-  <Container>
+  <Container style={styles.container}>
     <Content contentContainerStyle={styles.content}>
-      <Text>Home</Text>
+      <Text style={styles.text}>Home</Text>
     </Content>
   </Container>
 );

@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import {
+  Image,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {
   Button,
   Container,
   Content,
   Form,
   Item,
   Input,
-  Label,
   Text,
 } from 'native-base';
-import { View } from 'react-native';
 
 import styles from './styles';
 
-
-class Signup extends Component {
+class Login extends Component {
   state = {
     username: '',
     password: '',
@@ -36,15 +38,39 @@ class Signup extends Component {
     return (
       <Container style={styles.container}>
         <Content contentContainerStyle={styles.content}>
+          {/* Logo */}
+          <View style={styles.logoContainer}>
+            <Image
+              style={styles.logo}
+              source={require('../../assets/images/icon.png')}
+            />
+            <Text style={styles.logoText}>Crowdbotics</Text>
+          </View>
+
           {/* Form */}
-          <Form>
-            <Item floatingLabel>
-              <Label>Username</Label>
-              <Input onChangeText={username => this.setState({ username })} />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
+          <Form style={styles.form}>
+            <Item
+              style={styles.item}
+              rounded
+              last
+            >
               <Input
+                style={styles.input}
+                placeholder="Username"
+                placeholderTextColor="#afb0d1"
+                autoCapitalize="none"
+                onChangeText={username => this.setState({ username })}
+              />
+            </Item>
+            <Item
+              style={styles.item}
+              rounded
+              last
+            >
+              <Input
+                style={styles.input}
+                placeholder="Password"
+                placeholderTextColor="#afb0d1"
                 onChangeText={password => this.setState({ password })}
                 secureTextEntry
               />
@@ -60,20 +86,18 @@ class Signup extends Component {
               block
               large
               dark
+              rounded
             >
-              <Text style={styles.buttonText}>LOGIN</Text>
+              <Text style={styles.loginText}>LOGIN</Text>
             </Button>
 
             {/* Signup Button */}
-            <Button
-              style={styles.button}
-              onPress={this.onSignupButtonPressed}
-              hasText
-              block
-              primary
-            >
-              <Text style={styles.buttonText}>SIGNUP</Text>
-            </Button>
+            <View style={styles.signupContainer}>
+              <Text style={styles.dontHaveAccountText}>Don't have an account?</Text>
+              <TouchableOpacity onPress={this.onSignupButtonPressed}>
+                <Text style={styles.signupText}>Sign Up Now.</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </Content>
       </Container>
@@ -81,4 +105,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Login;
