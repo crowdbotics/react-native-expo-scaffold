@@ -82,7 +82,7 @@ class Login extends Component {
 
             {/* Signup Button */}
             <View style={styles.loginContainer}>
-              <Text style={styles.rememberAccountText}>Remember you account?</Text>
+              <Text style={styles.rememberAccountText}>Remember your account?</Text>
               <TouchableOpacity onPress={this.onLoginButtonPressed}>
                 <Text style={styles.loginText}>Login Now.</Text>
               </TouchableOpacity>
