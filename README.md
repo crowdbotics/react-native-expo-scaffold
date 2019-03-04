@@ -1,6 +1,6 @@
 # React Native Expo Scaffold
 
-This is a scaffold, using the Crowdbotics framework, for creating self-contained mobile apps. 
+This is a scaffold, using the Crowdbotics framework, for creating self-contained mobile apps.
 
 It uses React Native, with Expo, for the frontend and Django scaffold as a backend.
 
@@ -18,8 +18,6 @@ It uses React Native, with Expo, for the frontend and Django scaffold as a backe
 
 * [ESLint](https://github.com/eslint/eslint) Config using [Airbnb](https://github.com/airbnb/javascript)'s Style Guide
 
-* [Fastlane](https://docs.fastlane.tools/)
-
 * Initial Home Screen
 
   ![Home](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/home.png)
@@ -32,6 +30,10 @@ It uses React Native, with Expo, for the frontend and Django scaffold as a backe
   * Signup
 
     ![Signup](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/signup.png)
+
+  * Forgot Password
+
+    ![Forgot Password](https://github.com/crowdbotics/react-native-expo-scaffold/blob/master/screenshots/forgotPassword.png)
 
 ## Django Included Features
 
