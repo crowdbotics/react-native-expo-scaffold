@@ -22,3 +22,7 @@ urlpatterns = [
     url(r'^api/v1/', include('home.api.v1.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+admin.site.site_header = '{{ cookiecutter.project_name }}'
+admin.site.site_title = '{{ cookiecutter.project_name }} Admin Portal'
+admin.site.index_title = '{{ cookiecutter.project_name }} Admin'
