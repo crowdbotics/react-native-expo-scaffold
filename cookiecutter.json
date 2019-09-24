@@ -1,6 +1,6 @@
 {
     "project_name": "",
-    "snake_case_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_') }}",
+    "snake_case_slug": "{{ cookiecutter.project_slug|lower|replace(' ', '_')|replace('-', '_') }}",
     "dash_case_slug": "{{ cookiecutter.snake_case_slug|replace('_', '-') }}",
     "github_url": "https://github.com/crowdbotics-users/{{ cookiecutter.dash_case_slug }}",
     "custom_domain": ""
