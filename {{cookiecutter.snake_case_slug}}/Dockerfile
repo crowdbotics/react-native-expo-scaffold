@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.10
 
 # Install system dependencies
 RUN apk add --no-cache --update \
@@ -11,8 +11,9 @@ RUN apk add --no-cache --update \
   py3-pip \
   git \
   nodejs \
-  nodejs-npm
-RUN pip3 install --no-cache-dir -q pipenv
+  nodejs-npm \
+  curl
+RUN pip3 install --no-cache-dir -q 'pipenv==2018.11.26'
 
 # Add our code
 ADD ./ /app/webapp/
