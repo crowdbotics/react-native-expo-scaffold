@@ -12,7 +12,7 @@
     "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
     "expokit": "^32.0.3",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "native-base": "^2.10.0",
     "prop-types": "^15.6.2",
     "react": "16.5.0",
